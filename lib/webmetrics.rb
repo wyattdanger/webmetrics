@@ -19,17 +19,14 @@ module Webmetrics
 
       requires :api_key
       requires :username
-
     end
 
     def request (options = {})
-
       query_string = build_query_string(options)
 
       open "#{BASE_URL}#{query_string}" do |response|
         yield JSON.parse(response.string), response
       end
-
     end
 
     private 
