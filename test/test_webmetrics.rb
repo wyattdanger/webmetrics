@@ -1,17 +1,18 @@
 require 'test/unit'
+require_relative '../lib/webmetrics'
 
 class MyUnitTests < Test::Unit::TestCase
 
   def setup
-    puts "setup!"
+    @w = Webmetrics::API.new
   end
 
   def teardown
-    puts "teardown!"
+    ## Nothing
   end
 
-  def test_basic
-    puts "I RAN!"
+  def test_existence
+    assert_not_nil @w
   end
 
 end
