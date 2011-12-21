@@ -4,7 +4,7 @@ require "webmetrics/version"
 
 Gem::Specification.new do |s|
   s.name        = "webmetrics"
-  s.version     = Webmetrics::VERSION
+  s.version     = "0.0.1"
   s.authors     = ["Stephen Bush"]
   s.email       = ["stephenwyattbush@gmail.com"]
   s.homepage    = ""
