@@ -18,16 +18,9 @@ describe Webmetrics::API do
 
   describe "get" do
     it "makes an http request" do
-      @w.request :method => 'maintenance.getServices' do |res|
-        puts res.string
-        puts res.content_type
-      end
-    end
-
-    it "makes an http request" do
-      @w.request :method => 'maintenance.getServices', :format => 'json' do |res|
-        puts res.string
-        puts res.content_type
+      @w.request :method => 'maintenance.getServices' do |res, io|
+        puts res
+        puts io.content_type
       end
     end
 

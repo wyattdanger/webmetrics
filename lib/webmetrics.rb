@@ -3,6 +3,7 @@ require 'cgi'
 require 'digest/sha1'
 require 'base64'
 require 'open-uri'
+require 'json'
 
 
 module Webmetrics
@@ -26,7 +27,7 @@ module Webmetrics
       query_string = build_query_string(options)
 
       open "#{BASE_URL}#{query_string}" do |response|
-        yield response
+        yield JSON.parse(response.string), response
       end
 
     end
@@ -38,6 +39,7 @@ module Webmetrics
       stack = []
 
       options[:username] = @options[:username]
+      options[:format]   = 'json'
       options[:sig]      = signature
 
       options.each do |k, v|
