@@ -5,7 +5,6 @@ require 'base64'
 require 'open-uri'
 require 'json'
 
-
 module Webmetrics
 
   class API
@@ -25,7 +24,17 @@ module Webmetrics
       query_string = build_query_string(options)
 
       open "#{BASE_URL}#{query_string}" do |response|
-        yield JSON.parse(response.string), response
+
+        if response.is_a? StringIO
+          output = response.string
+        elsif response.is_a? Tempfile
+          output = response.read
+        else
+          raise "Response not Tempfile or StringIO. Response handling not yet implemented for this response type."
+        end
+
+        yield JSON.parse(output)
+
       end
     end
 
@@ -68,3 +77,4 @@ module Webmetrics
 
   end
 end
+
