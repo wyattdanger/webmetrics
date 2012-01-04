@@ -7,9 +7,9 @@ require 'webmetrics'
 
 wm = Webmetrics::API.new :api_key => 'foo', :username => 'bar'
 
-wm.request :method => 'maintenance.getServices' do |res, io|
-  # res is a parsed Ruby Hash containing the API response
-  # io is a StringIO from Open-URI
+wm.request :method => 'maintenance.getServices' do |data, res|
+  # data is a parsed Ruby Hash containing the API response
+  # res is a StringIO representation of the response
 end
 ```
 
