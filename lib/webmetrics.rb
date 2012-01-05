@@ -4,6 +4,7 @@ require 'digest/sha1'
 require 'base64'
 require 'open-uri'
 require 'json'
+require 'pp'
 
 module Webmetrics
 
@@ -34,6 +35,7 @@ module Webmetrics
         end
 
         yield JSON.parse(output)
+        pp JSON.parse(output)
 
       end
     end

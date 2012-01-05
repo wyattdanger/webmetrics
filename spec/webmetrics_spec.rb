@@ -23,6 +23,7 @@ describe Webmetrics::API do
     end
   end
 
+=begin
   describe "processeddata.getdata" do
     it "returns processed data" do
       @wm.request({
@@ -39,4 +40,6 @@ describe Webmetrics::API do
       end
     end
   end
+=end
+
 end
