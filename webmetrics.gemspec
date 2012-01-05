@@ -4,12 +4,12 @@ require "webmetrics/version"
 
 Gem::Specification.new do |s|
   s.name        = "webmetrics"
-  s.version     = "0.0.1"
+  s.version     = Webmetrics::VERSION
   s.authors     = ["Stephen Bush"]
   s.email       = ["stephenwyattbush@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Simple wrapper for Webmetrics API.}
+  s.description = %q{Offers a convenience method for making requests to Webmetrics API.}
 
   s.rubyforge_project = "Webmetrics"
 
